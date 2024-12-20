@@ -1,12 +1,12 @@
 # RESTAURANT CLI
 
-A simple cli that allows the user to access and manipulate table data in a database. It is built using python and sqlite3.
+A simple CLI that allows the user to access and manipulate table data in a database. It is built using python and sqlite3.
 
-By Nehemiah Madahana
+By Nehemiah Madahana.
 
 ## Description
 
-This simple Restaurant CLI app built using python enables users to access and modify data in a table. It also allows them to sort through the tables and aggregate data in order to present a clearer picture of the data.
+This simple Restaurant CLI app built using python enables users to access and modify data in a table. It also allows them to sort through the tables and data in order to present a clearer picture of the data.
 
 ## Features
 
@@ -34,7 +34,7 @@ You should see this if python is installed:
 
 ![python_installed](/assets/python_installed.png)
 
-If not consult ythis page on how to [install python](https://wiki.python.org/moin/BeginnersGuide/Download)
+If not consult [this page](https://wiki.python.org/moin/BeginnersGuide/Download) on how to install python.
 
 #### Check if You Have Pyenv
 
@@ -48,7 +48,7 @@ You should see this if pyenv is installed:
 
 ![pyenv_installed](/assets/pyenv_installed.png)
 
-If not follow the instructions on this page to [Download pyenv](https://github.com/pyenv/pyenv?tab=readme-ov-file#linuxunix)
+If not follow the instructions [this page](https://github.com/pyenv/pyenv?tab=readme-ov-file#linuxunix) to download pyenv.
 
 ### Installation Process
 
@@ -66,9 +66,9 @@ or by downloading a ZIP file of the code.
 cd /path-to/dir/restaurant-cli
 ```
 
-Be sure to replace /path-to/dir with the path to the directory into which you downloaded this repository.
+Be sure to replace */path-to/dir* with the path to the directory into which you downloaded this repository.
 
-3. Install the reqired dependencies
+3. Install the required dependencies
 
 ```bash
 pipenv Install
@@ -88,7 +88,7 @@ pipenv shell
 
 ## Usage
 
-The terminal should display a menu 
+The terminal should display a menu:
 
 ![menu](/assets/menu.png)
 
@@ -96,25 +96,25 @@ The terminal should display a menu
 
 #### Table Managers
 
-The methods in this section are also applicable to Shift Manager(option 2 on the main menu) and Worker Manager(option 3 on the main menu)
+The methods in this section are also applicable to Shift Manager (Option 2 on the main menu) and Worker Manager (Option 3 on the main menu).
 
-1. To exit type 0 and press Enter
+1. To exit type "0" and press Enter:
 
 ![exit](/assets/exit.png)
 
-This will exit the cli and you'll have to re-do step 5 of the installation Process
+This will exit the CLI and you'll have to re-do step 5 of the installation Process.
 
 2. To add a new row to Restaurant:
 
-- First type 1 into the terminal. This brings you into the class manager in this case it's the Restaurant Manager. Each model has its own manager and the menu is similar to this one.
+- First type "1" into the terminal. This takes you to the Restaurant Manager.Each model has its own manager and the menu is similar to this one:
 
 ![restaurant_manager](/assets/restaurant_manager.png)
 
-- From here you can add, update or delete a row from the database table associated with the manager, in this case the table is restaurants. You can also return to the main menu from this point by typing 0, but we are interested in adding a new Restaurant to the table, therefore we type 1.
+- From here you can add, update or delete a row from the database table associated with the manager, in this case the table is restaurants. You can also return to the main menu from this point by typing "0", but we are currently interested in adding a new Restaurant to the table, therefore we type "1":
 
 ![add_restaurant_1](/assets/add_restaurant_1.png)
 
-- This causes the program to prompt us for more information about the Restaurant we are trying to add
+- This causes the program to prompt us for more information about the Restaurant we are trying to add:
 
 ![add_restaurant_1](/assets/add_restaurant_1.png)
 
@@ -122,41 +122,39 @@ This will exit the cli and you'll have to re-do step 5 of the installation Proce
 
 ![add_restaurant_2](/assets/add_restaurant_2.png)
 
-- Now let us check if the data has been persisted
-
-Type 4 into the terminal
+- To check if the data has been persisted. Type "4" into the terminal:
 
 ![success_restaurant](/assets/success_restaurant.png)
 
 3. Now let's update this restaurant.
 
-- Enter the Restaurant Manager by typing 1, then type 2 to enter the update menu.
+- Enter the Restaurant Manager by typing "1", then type "2" to enter the update menu:
 
 ![update_menu](/assets/update_menu.png)
 
-- There are two ways to update a database entry for every Manager: by name and by id. Since we can easily remember a name as oppossed to remembering an id, lets use the restaurant's name
+- There are two ways to update a database entry for every Manager: by name and by id. Since we can easily remember a name as opposed to remembering an id, let's use the restaurant's name:
 
 ![update_restaurant_1](/assets/update_restaurant_1.png)
 
-- Fill in the required details then press Enter.
+- Fill in the required details then press Enter:
 
 ![update_restaurant_2](/assets/update_restaurant_2.png)
 
-- To confirm the data has been persisted we again type 4 then hit Enter.
+- To confirm the data has been persisted we again type "4" then hit Enter.
 
 ![update_restaurant_3](/assets/update_restaurant_3.png)
 
 4. Let's delete the restaurant.
 
-- Enter the restaurant manager by first typing 1, then enter the delete menu by typing 2 and hitting Enter.
+- Enter the restaurant manager by first typing "1", then enter the delete menu by typing "2" and hitting Enter.
 
 ![delete_restaurant_1](/assets/delete_restaurant_1.png)
 
-- Here we again have an option to delete either by name or id. Now that we know the restaurant's id, let's try that path. Choose the second option by typing 2 and hitting enter, then input the restaurant's id which is 1.
+- Here we again have an option to delete either by name or id. Now that we know the restaurant's id, let's try that path. Choose the second option by typing "2" and hitting enter, then input the restaurant's id which is "1".
 
 ![delete_restaurant_2](/assets/delete_restaurant_2.png)
 
-- We get a confirmation message, but just to be sure let's list all reaturants(option 4 on the main menu)
+- We get a confirmation message, but just to be sure, let's list all restaurants (Option 4 on the main menu)
 
 ![delete_restaurant_3](/assets/delete_restaurant_3.png)
 
@@ -174,13 +172,15 @@ What if you knew a restaurant's Id and wanted to find more about it? Look no fur
 
 Create a restaurant using the instructions from the segment on Table Managers above, then from the main menu:
 
-1. Enter 5 into the input field.
+1. Enter "5" into the input field.
 
 ![find_res_by_id_1](/assets/find_res_by_id_1.png)
 
-2. Input the id of the restaurant in this case 1 Voila!:
+2. Input the id of the restaurant in this case "1":
 
 ![find_res_by_id_2](/assets/find_res_by_id_2.png)
+
+and Voilà!
 
 #### More
 
@@ -200,7 +200,7 @@ The queries are generally structured in this way: Get *many* for *one*.
 
 - Get shifts for worker (Option 4), can be said as "Get *all* the shifts associated with the **worker Id** that I pass in.
 
-Lets see it in action, We'll use Option 1(Get shifts for restaurant)
+Lets see it in action, We'll use Option 1 (Get shifts for restaurant).
 
 1. We navigate to the More Menu by typing "*" into the terminal.
 
@@ -210,7 +210,7 @@ Lets see it in action, We'll use Option 1(Get shifts for restaurant)
 
 ![more_2](/assets/more_2.png)
 
-3. We enter the restaurant id, in this case "1" and get the result. (I'd added a new restaurant and some shifts to help demonstarate the query behaviour more clearly)
+3. We enter the restaurant Id, in this case "1" and get the result. (I'd added a new restaurant and some shifts to help demonstarate the query behaviour more clearly)
 
 ![more_3](/assets/more_3.png)
 
@@ -221,6 +221,7 @@ The list of all shifts by comparison:
 ## Technologies Used
 
 - python3
+- pyenv
 - sqlite3
 
 ## Support and Contact Details
