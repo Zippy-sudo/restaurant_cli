@@ -10,7 +10,7 @@ class Shift:
         self.restaurant_id = restaurant_id
         self.id_ = id_
         type(self).create_table()
-
+    
     @classmethod
     def create_table(cls):
         sql = """
@@ -121,7 +121,6 @@ class Shift:
             workers = CURSOR.execute(sql, (self.id_,)).fetchall()
 
         return [Worker.instance_from_db(worker) for worker in workers] if workers else None
-
 
     def __repr__(self):
         return f"time_in = {self.time_in}, time_out = {self.time_out}, restaurant_id = {self.restaurant_id}, Id = {self.id_}"

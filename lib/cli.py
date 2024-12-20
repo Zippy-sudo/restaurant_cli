@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # lib/cli.py
 
 from helpers import (
