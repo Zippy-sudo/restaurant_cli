@@ -1,172 +1,242 @@
-# Phase 3 CLI+ORM Project Template
+# RESTAURANT CLI
 
-## Learning Goals
+A simple cli that allows the user to access and manipulate table data in a database. It is built using python and sqlite3.
 
-- Discuss the basic directory structure of a CLI.
-- Outline the first steps in building a CLI.
+By Nehemiah Madahana
 
----
+## Description
 
-## Introduction
+This simple Restaurant CLI app built using python enables users to access and modify data in a table. It also allows them to sort through the tables and aggregate data in order to present a clearer picture of the data.
 
-You now have a basic idea of what constitutes a CLI. Fork and clone this lesson
-for a project template for your CLI.
+## Features
 
-Take a look at the directory structure:
+- A CLI menu to enable users to access the data and modify it.
 
-```console
-.
-├── Pipfile
-├── Pipfile.lock
-├── README.md
-└── lib
-    ├── models
-    │   ├── __init__.py
-    │   └── model_1.py
-    ├── cli.py
-    ├── debug.py
-    └── helpers.py
+- Persistence of data through a database.
+
+## How to Use
+
+### Requirements
+
+- A computer.
+- [Python](https://wiki.python.org/moin/BeginnersGuide/Download) version 3.18.3 or higher.
+- The [pyenv](https://github.com/pyenv/pyenv?tab=readme-ov-file#linuxunix) package manager
+
+#### Check if You Have Python
+
+Run:
+
+```bash
+python --version
 ```
 
-Note: The directory also includes two files named `CONTRIBUTING.md` and
-`LICENSE.md` that are specific to Flatiron's curriculum. You can disregard or
-delete the files if you want.
+You should see this if python is installed:
 
----
+![python_installed](/assets/python_installed.png)
 
-## Generating Your Environment
+If not consult ythis page on how to [install python](https://wiki.python.org/moin/BeginnersGuide/Download)
 
-You might have noticed in the file structure- there's already a Pipfile!
+#### Check if You Have Pyenv
 
-Install any additional dependencies you know you'll need for your project by
-adding them to the `Pipfile`. Then run the commands:
+Run
 
-```console
-pipenv install
+```bash
+pyenv versions
+```
+
+You should see this if pyenv is installed:
+
+![pyenv_installed](/assets/pyenv_installed.png)
+
+If not follow the instructions on this page to [Download pyenv](https://github.com/pyenv/pyenv?tab=readme-ov-file#linuxunix)
+
+### Installation Process
+
+1. Clone this repository by typing the following command into your terminal:
+
+```bash
+git clone git@github.com:Zippy-sudo/restaurant_cli.git
+```
+
+or by downloading a ZIP file of the code.
+
+2. Navigate to the project directory:
+
+```bash
+cd /path-to/dir/restaurant-cli
+```
+
+Be sure to replace /path-to/dir with the path to the directory into which you downloaded this repository.
+
+3. Install the reqired dependencies
+
+```bash
+pipenv Install
+```
+
+4. Enter the virtual environment
+
+```bash
 pipenv shell
 ```
 
----
+5. Run the cli.py file by typing the following command into your terminal:
 
-## Generating Your CLI
-
-A CLI is, simply put, an interactive script and prompts the user and performs
-operations based on user input.
-
-The project template has a sample CLI in `lib/cli.py` that looks like this:
-
-```py
-# lib/cli.py
-
-from helpers import (
-    exit_program,
-    helper_1
-)
-
-
-def main():
-    while True:
-        menu()
-        choice = input("> ")
-        if choice == "0":
-            exit_program()
-        elif choice == "1":
-            helper_1()
-        else:
-            print("Invalid choice")
-
-
-def menu():
-    print("Please select an option:")
-    print("0. Exit the program")
-    print("1. Some useful function")
-
-
-if __name__ == "__main__":
-    main()
+```bash
+./lib/cli.py
 ```
 
-The helper functions are located in `lib/helpers.py`:
+## Usage
 
-```py
-# lib/helpers.py
+The terminal should display a menu 
 
-def helper_1():
-    print("Performing useful function#1.")
+![menu](/assets/menu.png)
 
+### Options
 
-def exit_program():
-    print("Goodbye!")
-    exit()
-```
+#### Table Managers
 
-You can run the template CLI with `python lib/cli.py`, or include the shebang
-and make it executable with `chmod +x`. The template CLI will ask for input, do
-some work, and accomplish some sort of task.
+The methods in this section are also applicable to Shift Manager(option 2 on the main menu) and Worker Manager(option 3 on the main menu)
 
-Past that, CLIs can be whatever you'd like, as long as you follow the project
-requirements.
+1. To exit type 0 and press Enter
 
-Of course, you will update `lib/cli.py` with prompts that are appropriate for
-your application, and you will update `lib/helpers.py` to replace `helper_1()`
-with a useful function based on the specific problem domain you decide to
-implement, along with adding other helper functions to the module.
+![exit](/assets/exit.png)
 
-In the `lib/models` folder, you should rename `model_1.py` with the name of a
-data model class from your specific problem domain, and add other classes to the
-folder as needed. The file `lib/models/__init__.py` has been initialized to
-create the necessary database constants. You need to add import statements to
-the various data model classes in order to use the database constants.
+This will exit the cli and you'll have to re-do step 5 of the installation Process
 
-You are also welcome to implement a different module and directory structure.
-However, your project should be well organized, modular, and follow the design
-principal of separation of concerns, which means you should separate code
-related to:
+2. To add a new row to Restaurant:
 
-- User interface
-- Data persistence
-- Problem domain rules and logic
+- First type 1 into the terminal. This brings you into the class manager in this case it's the Restaurant Manager. Each model has its own manager and the menu is similar to this one.
 
----
+![restaurant_manager](/assets/restaurant_manager.png)
 
-## Updating README.md
+- From here you can add, update or delete a row from the database table associated with the manager, in this case the table is restaurants. You can also return to the main menu from this point by typing 0, but we are interested in adding a new Restaurant to the table, therefore we type 1.
 
-`README.md` is a Markdown file that should describe your project. You will
-replace the contents of this `README.md` file with a description of **your**
-actual project.
+![add_restaurant_1](/assets/add_restaurant_1.png)
 
-Markdown is not a language that we cover in Flatiron's Software Engineering
-curriculum, but it's not a particularly difficult language to learn (if you've
-ever left a comment on Reddit, you might already know the basics). Refer to the
-cheat sheet in this assignments's resources for a basic guide to Markdown.
+- This causes the program to prompt us for more information about the Restaurant we are trying to add
 
-### What Goes into a README?
+![add_restaurant_1](/assets/add_restaurant_1.png)
 
-This README serves as a template. Replace the contents of this file to describe
-the important files in your project and describe what they do. Each Python file
-that you edit should get at least a paragraph, and each function should be
-described with a sentence or two.
+- Fill in the information  required  and you will get a success message:
 
-Describe your actual CLI script first, and with a good level of detail. The rest
-should be ordered by importance to the user. (Probably functions next, then
-models.)
+![add_restaurant_2](/assets/add_restaurant_2.png)
 
-Screenshots and links to resources that you used throughout are also useful to
-users and collaborators, but a little more syntactically complicated. Only add
-these in if you're feeling comfortable with Markdown.
+- Now let us check if the data has been persisted
 
----
+Type 4 into the terminal
 
-## Conclusion
+![success_restaurant](/assets/success_restaurant.png)
 
-A lot of work goes into a good CLI, but it all relies on concepts that you've
-practiced quite a bit by now. Hopefully this template and guide will get you off
-to a good start with your Phase 3 Project.
+3. Now let's update this restaurant.
 
-Happy coding!
+- Enter the Restaurant Manager by typing 1, then type 2 to enter the update menu.
 
----
+![update_menu](/assets/update_menu.png)
 
-## Resources
+- There are two ways to update a database entry for every Manager: by name and by id. Since we can easily remember a name as oppossed to remembering an id, lets use the restaurant's name
 
-- [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+![update_restaurant_1](/assets/update_restaurant_1.png)
+
+- Fill in the required details then press Enter.
+
+![update_restaurant_2](/assets/update_restaurant_2.png)
+
+- To confirm the data has been persisted we again type 4 then hit Enter.
+
+![update_restaurant_3](/assets/update_restaurant_3.png)
+
+4. Let's delete the restaurant.
+
+- Enter the restaurant manager by first typing 1, then enter the delete menu by typing 2 and hitting Enter.
+
+![delete_restaurant_1](/assets/delete_restaurant_1.png)
+
+- Here we again have an option to delete either by name or id. Now that we know the restaurant's id, let's try that path. Choose the second option by typing 2 and hitting enter, then input the restaurant's id which is 1.
+
+![delete_restaurant_2](/assets/delete_restaurant_2.png)
+
+- We get a confirmation message, but just to be sure let's list all reaturants(option 4 on the main menu)
+
+![delete_restaurant_3](/assets/delete_restaurant_3.png)
+
+- Woohoo! There are no restaurants in the table. It worked!
+
+#### Find by Id
+
+What if you knew a restaurant's Id and wanted to find more about it? Look no further than the Find by Id option.
+
+- Find restaurant by Id (Option 5 on the main menu) lets you find  a restaurant by its Id.
+
+- Find shift by Id (Option 7 on the main menu) lets you find a shift by its Id.
+
+- Find worker by Id (Option 9 on the main menu) lets you find a worker by their Id.
+
+Create a restaurant using the instructions from the segment on Table Managers above, then from the main menu:
+
+1. Enter 5 into the input field.
+
+![find_res_by_id_1](/assets/find_res_by_id_1.png)
+
+2. Input the id of the restaurant in this case 1 Voila!:
+
+![find_res_by_id_2](/assets/find_res_by_id_2.png)
+
+#### More
+
+You're probaly wondering about the More option(*). Well, let's find out what it does.
+
+![more_1](/assets/more_1.png)
+
+The More option enables us to extract relationship data from the tables
+
+The queries are generally structured in this way: Get *many* for *one*.
+
+- Get shifts for restaurant (Option 1), can be said as "Get *all* the shifts associated with the **restaurant Id** that I pass in.
+
+- Get workers for restaurant (Option 2), can be said as "Get *all* the workers associated with the **restaurant Id** that I pass in.
+
+- Get workers for shift (Option 3), can be said as "Get *all* the workers associated with the **shift Id** that I pass in.
+
+- Get shifts for worker (Option 4), can be said as "Get *all* the shifts associated with the **worker Id** that I pass in.
+
+Lets see it in action, We'll use Option 1(Get shifts for restaurant)
+
+1. We navigate to the More Menu by typing "*" into the terminal.
+
+![more_1](/assets/more_1.png)
+
+2. We select the First Option (Get shifts for restaurant) by typing in "1" then hitting Enter.
+
+![more_2](/assets/more_2.png)
+
+3. We enter the restaurant id, in this case "1" and get the result. (I'd added a new restaurant and some shifts to help demonstarate the query behaviour more clearly)
+
+![more_3](/assets/more_3.png)
+
+The list of all shifts by comparison:
+
+![more_4](/assets/more_4.png)
+
+## Technologies Used
+
+- python3
+- sqlite3
+
+## Support and Contact Details
+
+If you have any questions, suggestions, or need assistance, please contact:
+
+- Email: <nehemiah.madahana@student.moringaschool.com>
+
+## License
+
+MIT License
+
+Copyright &copy; 2024 Nehemiah Madahana
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
